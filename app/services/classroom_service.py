@@ -81,3 +81,10 @@ class ClassroomService:
                 )
             )
         return response
+
+    def list_linked_students(self, session: Session, current_user) -> list[UserResponse]:
+        if current_user.role != UserRole.PARENT:
+            raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Only parents can view linked students.")
+
+        students = self.user_repository.list_students_for_parent(session, current_user.id)
+        return [UserResponse.model_validate(student) for student in students]

@@ -3,5 +3,9 @@ __pycache__/
 *.pyc
 .env
 *.db
+.e2e/
+*.egg-info/
+eldas-frontend/playwright-report/
+eldas-frontend/test-results/
 .idea/
 .vscode/

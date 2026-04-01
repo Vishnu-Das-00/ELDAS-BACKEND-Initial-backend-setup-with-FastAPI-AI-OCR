@@ -7,6 +7,7 @@ from app.api.dependencies.auth import require_roles
 from app.api.dependencies.db import get_db_session
 from app.schemas.classroom import ParentLinkRequest
 from app.schemas.parent import ParentDashboardResponse
+from app.schemas.user import UserResponse
 from app.services.classroom_service import ClassroomService
 from app.services.dashboard_service import DashboardService
 from app.utils.enums import UserRole
@@ -23,6 +24,14 @@ def link_child(
     current_user=Depends(require_roles(UserRole.PARENT)),
 ) -> dict[str, str]:
     return classroom_service.link_parent(db, current_user, payload.student_id)
+
+
+@router.get("/links", response_model=list[UserResponse])
+def list_linked_students(
+    db: Annotated[Session, Depends(get_db_session)],
+    current_user=Depends(require_roles(UserRole.PARENT)),
+) -> list[UserResponse]:
+    return classroom_service.list_linked_students(db, current_user)
 
 
 @router.get("/student/{student_id}", response_model=ParentDashboardResponse)

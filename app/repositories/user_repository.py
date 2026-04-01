@@ -20,3 +20,13 @@ class UserRepository:
 
     def get_parent_ids_for_student(self, session: Session, student_id: int) -> list[int]:
         return list(session.scalars(select(ParentLink.parent_id).where(ParentLink.student_id == student_id)).all())
+
+    def list_students_for_parent(self, session: Session, parent_id: int) -> list[User]:
+        return list(
+            session.scalars(
+                select(User)
+                .join(ParentLink, ParentLink.student_id == User.id)
+                .where(ParentLink.parent_id == parent_id)
+                .order_by(User.name.asc())
+            ).all()
+        )

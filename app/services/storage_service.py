@@ -2,7 +2,10 @@ from dataclasses import dataclass
 from pathlib import Path
 from uuid import uuid4
 
-import boto3
+try:
+    import boto3
+except ModuleNotFoundError:  # pragma: no cover - optional dependency for S3 deployments
+    boto3 = None
 
 from app.core.config import get_settings
 
@@ -34,6 +37,8 @@ class StorageService:
     def _save_to_s3(self, key: str, content: bytes) -> StoredFile:
         if not self.settings.s3_bucket:
             raise ValueError("S3 bucket is not configured.")
+        if boto3 is None:
+            raise RuntimeError("boto3 is required for S3 storage support.")
 
         client = boto3.client(
             "s3",

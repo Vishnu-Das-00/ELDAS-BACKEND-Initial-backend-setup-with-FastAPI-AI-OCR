@@ -1,6 +1,9 @@
 import json
 
-from openai import OpenAI
+try:
+    from openai import OpenAI
+except ModuleNotFoundError:  # pragma: no cover - optional dependency when API access is disabled
+    OpenAI = None
 
 from app.core.config import get_settings
 
@@ -8,7 +11,7 @@ from app.core.config import get_settings
 class LLMEngine:
     def __init__(self) -> None:
         self.settings = get_settings()
-        self.client = OpenAI(api_key=self.settings.openai_api_key) if self.settings.openai_api_key else None
+        self.client = OpenAI(api_key=self.settings.openai_api_key) if self.settings.openai_api_key and OpenAI is not None else None
 
     @property
     def configured(self) -> bool:
