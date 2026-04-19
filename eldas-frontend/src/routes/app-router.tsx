@@ -165,6 +165,21 @@ export function AppRouter() {
         },
       ],
     },
+   {
+      element: <ProtectedRoute roles={["teacher", "student", "parent"]} />,
+      children: [
+        {
+          path: "/about",
+          element: <NotificationsLayoutResolver />,
+          children: [
+            {
+              index: true,
+              element: lazyElement(<AboutPage />),
+            },
+          ],
+        },
+      ],
+    },
     {
       path: "*",
       element: lazyElement(<NotFoundPage />),
