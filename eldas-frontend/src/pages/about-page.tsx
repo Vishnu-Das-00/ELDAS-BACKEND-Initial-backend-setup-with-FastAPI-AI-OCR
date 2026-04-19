@@ -19,7 +19,7 @@ export function AboutPage() {
           />
           <div>
             <h2 className="font-display text-3xl font-bold text-ink">Vishnu Das</h2>
-            <p className="mt-1 text-sm font-semibold text-tide">Founder & CEO, Eldas</p>
+            <p className="mt-1 text-sm font-semibold text-tide">Founder &amp; CEO, Eldas</p>
             
               href="https://www.linkedin.com/in/vishnu-das-5b2055240"
               target="_blank"
@@ -38,10 +38,7 @@ export function AboutPage() {
             <p className="mt-4 text-sm leading-7 text-slate-500">
               With a robust foundation in full-stack development — mastering Python frameworks like FastAPI and
               Django, React for dynamic frontends, and seamless deployments via GitHub and Render — Vishnu has
-              architected scalable web applications that empower users through intelligent AI-driven tools. His
-              hands-on expertise in API orchestration, machine learning model integration, and cloud-native
-              architectures stems from intensive real-world projects, including the inception and scaling of Eldas
-              from prototype to production.
+              architected scalable web applications that empower users through intelligent AI-driven tools.
             </p>
             <p className="mt-4 text-sm leading-7 text-slate-500">
               An aspiring entrepreneur with a passion for edtech's transformative potential, Vishnu excels in
@@ -52,6 +49,9 @@ export function AboutPage() {
           </div>
         </div>
       </Card>
+    </div>
+  );
+}
     </div>
   );
 }
