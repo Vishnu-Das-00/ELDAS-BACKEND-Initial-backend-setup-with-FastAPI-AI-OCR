@@ -10,6 +10,9 @@ import { GuestRoute } from "@/routes/guest-route";
 import { ProtectedRoute } from "@/routes/protected-route";
 import { useAuthStore } from "@/store/auth-store";
 
+const AboutPage = lazy(() =>
+  import("@/pages/about-page").then((module) => ({ default: module.AboutPage })),
+);
 const LoginPage = lazy(() => import("@/pages/login-page").then((module) => ({ default: module.LoginPage })));
 const SignupPage = lazy(() => import("@/pages/signup-page").then((module) => ({ default: module.SignupPage })));
 const RootPage = lazy(() => import("@/pages/root-page").then((module) => ({ default: module.RootPage })));
