@@ -13,7 +13,7 @@ export function AboutPage() {
       <Card className="bg-white/90 p-8">
         <div className="flex flex-col items-center gap-8 md:flex-row md:items-start">
           <img
-            src="/vishnu.jpg"
+            src="/vishnu.png"
             alt="Vishnu Das"
             className="h-40 w-40 rounded-3xl object-cover shadow-panel flex-shrink-0"
           />
