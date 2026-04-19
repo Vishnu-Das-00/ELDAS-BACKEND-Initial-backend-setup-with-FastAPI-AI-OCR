@@ -1,4 +1,4 @@
-import { Bell, BookCheck, BookOpenText, ChartColumnIncreasing, LayoutDashboard, School2 } from "lucide-react";
+import { Bell, BookCheck, BookOpenText, ChartColumnIncreasing, Info, LayoutDashboard, School2 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 import type { UserRole } from "@/types/auth";
@@ -14,15 +14,18 @@ export const navigationByRole: Record<UserRole, NavigationItem[]> = {
     { label: "Dashboard", to: "/teacher", icon: LayoutDashboard },
     { label: "Test Builder", to: "/teacher/tests", icon: BookCheck },
     { label: "Notifications", to: "/notifications", icon: Bell },
+    { label: "About", to: "/about", icon: Info },
   ],
   student: [
     { label: "Dashboard", to: "/student", icon: LayoutDashboard },
     { label: "Learning", to: "/student", icon: School2 },
     { label: "Notifications", to: "/notifications", icon: Bell },
+    { label: "About", to: "/about", icon: Info },
   ],
   parent: [
     { label: "Dashboard", to: "/parent", icon: ChartColumnIncreasing },
     { label: "Reports", to: "/parent", icon: BookOpenText },
     { label: "Notifications", to: "/notifications", icon: Bell },
+    { label: "About", to: "/about", icon: Info },
   ],
 };
