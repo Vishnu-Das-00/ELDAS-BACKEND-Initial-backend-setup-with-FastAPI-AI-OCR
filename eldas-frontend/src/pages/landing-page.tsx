@@ -100,17 +100,17 @@ export function LandingPage() {
             </div>
 
             <div className="grid gap-4 sm:grid-cols-3 xl:grid-cols-1">
-              <Card className="bg-white/12 p-5 text-white backdrop-blur-sm">
+              <Card className="bg-white/20 p-5 text-white backdrop-blur-sm">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">Classrooms</p>
                 <p className="mt-3 font-display text-4xl font-bold">3 views</p>
                 <p className="mt-3 text-sm leading-6 text-white/80">One platform, designed separately for teachers, students, and parents.</p>
               </Card>
-              <Card className="bg-white/12 p-5 text-white backdrop-blur-sm">
+              <Card className="bg-white/20 p-5 text-white backdrop-blur-sm">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">Signals</p>
                 <p className="mt-3 font-display text-4xl font-bold">5 layers</p>
                 <p className="mt-3 text-sm leading-6 text-white/80">Understanding, concept, method, execution, and memory all visible in context.</p>
               </Card>
-              <Card className="bg-white/12 p-5 text-white backdrop-blur-sm">
+              <Card className="bg-white/20 p-5 text-white backdrop-blur-sm">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">Workflow</p>
                 <p className="mt-3 font-display text-4xl font-bold">1 loop</p>
                 <p className="mt-3 text-sm leading-6 text-white/80">Classroom creation, tests, submissions, evaluation, and parent awareness stay connected.</p>
