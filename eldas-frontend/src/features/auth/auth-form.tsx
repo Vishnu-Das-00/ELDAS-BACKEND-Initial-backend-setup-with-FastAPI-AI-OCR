@@ -190,7 +190,7 @@ export function AuthForm({ mode }: AuthFormProps) {
             })}
           </div>
           <FormField label="Full name" error={signupForm.formState.errors.name?.message}>
-            <Input placeholder="Ananya Rao" data-testid="signup-name" {...signupForm.register("name")} />
+            <Input placeholder="Vishnu Das,Trisanku Das,Ranju Das" data-testid="signup-name" {...signupForm.register("name")} />
           </FormField>
           <FormField label="Email" error={signupForm.formState.errors.email?.message}>
             <Input type="email" placeholder="you@example.com" data-testid="signup-email" {...signupForm.register("email")} />
