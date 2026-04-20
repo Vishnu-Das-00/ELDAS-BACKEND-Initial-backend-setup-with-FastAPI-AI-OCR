@@ -11,7 +11,7 @@ from app.core.config import get_settings
 class LLMEngine:
     def __init__(self) -> None:
         self.settings = get_settings()
-        self.client = OpenAI(api_key=self.settings.openai_api_key) if self.settings.openai_api_key and OpenAI is not None else None
+        self.client = OpenAI(api_key=self.settings.openai_api_key, base_url="https://api.groq.com/openai/v1") if self.settings.openai_api_key and OpenAI is not None else None
 
     @property
     def configured(self) -> bool:
